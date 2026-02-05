@@ -1,0 +1,331 @@
+/* Full CSS for Advanced Grid Background System */
+
+/* Base Styles */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables for easy customization */
+:root {
+    --primary-blue: #0a1929;
+    --secondary-blue: #1a365d;
+    --accent-blue: rgba(66, 153, 225, 1);
+    --grid-color: rgba(66, 153, 225, 0.08);
+    --grid-size: 50px;
+    --animation-speed-slow: 80s;
+    --animation-speed-medium: 20s;
+    --animation-speed-fast: 3s;
+}
+
+/* Main Body Background */
+body {
+    position: relative;
+    background: 
+        linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 50%, var(--primary-blue) 100%),
+        /* Grid background */
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 
+        cover,
+        var(--grid-size) var(--grid-size),
+        var(--grid-size) var(--grid-size);
+    background-position: 
+        center,
+        center,
+        center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* Radial Gradient Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(44, 82, 130, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(66, 153, 225, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 40% 50%, rgba(99, 179, 237, 0.05) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Animated Diagonal Lines Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, transparent 49.5%, rgba(66, 153, 225, 0.08) 49.5%, rgba(66, 153, 225, 0.02) 50.5%, transparent 50.5%),
+        linear-gradient(-45deg, transparent 49.5%, rgba(66, 153, 225, 0.08) 49.5%, rgba(66, 153, 225, 0.02) 50.5%, transparent 50.5%);
+    background-size: 100px 100px;
+    animation: diagonal-move var(--animation-speed-slow) linear infinite;
+    z-index: 2;
+    pointer-events: none;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Grid Focus Effect Element - This needs to be added to HTML */
+.grid-focus {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(66, 153, 225, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: focus-pulse 8s ease-in-out infinite;
+    z-index: 3;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+/* Grid Connections Container - Add to HTML */
+.grid-connections {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Individual Grid Connection Lines */
+.grid-connection {
+    position: absolute;
+    background: linear-gradient(90deg, 
+        rgba(66, 153, 225, 0) 0%, 
+        rgba(66, 153, 225, 0.25) 50%, 
+        rgba(66, 153, 225, 0) 100%);
+    height: 1px;
+    animation: connection-glow var(--animation-speed-fast) ease-in-out infinite;
+    transform-origin: left center;
+}
+
+/* Grid Intersection Points Container */
+.grid-points {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Individual Grid Points */
+.grid-point {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(66, 153, 225, 0.5);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 15px rgba(66, 153, 225, 0.7),
+        0 0 30px rgba(66, 153, 225, 0.3);
+    animation: point-pulse 2s ease-in-out infinite;
+    transform: translate(-50%, -50%);
+}
+
+/* Alternative Background Layers (Optional) */
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(66, 153, 225, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transition: transform 0.1s linear;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-dots {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(159, 122, 234, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transition: transform 0.1s linear;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.bg-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(56, 178, 172, 0.03) 10px,
+            rgba(56, 178, 172, 0.03) 20px
+        );
+    transition: transform 0.1s linear;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes diagonal-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200px 200px;
+    }
+}
+
+@keyframes focus-pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+@keyframes connection-glow {
+    0%, 100% {
+        opacity: 0.1;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes point-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0.8;
+    }
+}
+
+@keyframes grid-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+/* Content Styling */
+.content {
+    position: relative;
+    z-index: 100;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #4299e1, #9f7aea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    body::after,
+    .grid-focus,
+    .grid-connection,
+    .grid-point {
+        animation: none !important;
+    }
+    
+    .grid-focus {
+        opacity: 0.3;
+    }
+    
+    .grid-connection {
+        opacity: 0.1;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --grid-size: 30px;
+    }
+    
+    body::after {
+        background-size: 60px 60px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Interactive Effects */
+.interactive-grid {
+    cursor: crosshair;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(10, 25, 41, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(66, 153, 225, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(66, 153, 225, 0.8);
+}
