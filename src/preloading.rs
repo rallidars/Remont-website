@@ -1,5 +1,7 @@
 use yew::prelude::*;
-use yew_hooks::use_interval;
+use yew_hooks::{use_async_with_options, use_interval, UseAsyncOptions};
+
+use crate::{api::ApiRequest, BACKEND_URL};
 
 pub enum PhaseState {
     OneByOne,
@@ -14,6 +16,27 @@ pub fn Preloading() -> Html {
     let phase_state = use_state(|| PhaseState::OneByOne);
     let show_title = use_state(|| false);
     let title_animation_step = use_state(|| 0usize);
+    let images = use_state(|| Vec::<String>::new());
+
+    let _get_images = use_async_with_options(
+        {
+            let images = images.clone();
+            async move {
+                match ApiRequest::get(format!("{}/main_page", BACKEND_URL))
+                    .json_response::<Vec<String>>()
+                    .await
+                {
+                    Ok(data) => {
+                        images.set(data);
+                    }
+                    Err(_) => {}
+                }
+
+                Ok::<(), ()>(())
+            }
+        },
+        UseAsyncOptions::enable_auto(),
+    );
 
     {
         let step = step.clone();
@@ -56,6 +79,7 @@ pub fn Preloading() -> Html {
     }
 
     html! {
+    <div class="preloader-main">
     <div class={format!("preloader preloader-active {}", if matches!(*phase_state, PhaseState::Complete){""} else{"completed"})}>
         <div class="progress-bar">
             <div
@@ -81,13 +105,15 @@ pub fn Preloading() -> Html {
                 }
 
                 };
-                let src = format!("/static/image_remont{}.jpeg", i + 1);
+
+            {if let Some(src) = images.get(i).clone(){
 
                 html! {
                     <div class={class}>
-                        <img src={src} />
+                        <img src={src.clone()} />
                     </div>
                 }
+            }else{html!{}}}
             })}
         </div>
 
@@ -117,5 +143,6 @@ pub fn Preloading() -> Html {
                     </div>
                 }
     </div>
+        </div>
     }
 }

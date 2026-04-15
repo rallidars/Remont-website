@@ -18,7 +18,7 @@ pub fn CTASection() -> Html {
     let on_close_form = {
         let show_form = show_form.clone();
         Callback::from(move |_| {
-            show_form.set(true);
+            show_form.set(false);
         })
     };
 
@@ -37,19 +37,8 @@ pub fn CTASection() -> Html {
     };
 
     html! {
-        <div class="cta">
+        <div class="cta-main">
         <section class={classes!("cta-section", if *show_form { "form-active" } else { "" })}>
-            // Background elements
-            <div class="cta-background">
-                <div class="background-grid"></div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
-                <div class="light-beam"></div>
-            </div>
-
             // Main content container
             <div class="cta-container">
                 // Left side - Main message
@@ -76,21 +65,6 @@ pub fn CTASection() -> Html {
                         Професійний підхід, гарантія якості та прозора цінова політика."}
                     </p>
 
-                    // Stats counter
-                    <div class="stats-counter">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="150">{"0"}</div>
-                            <div class="stat-label">{"виконаних проектів"}</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="98">{"0"}</div>
-                            <div class="stat-label">{"задоволених клієнтів"}</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="5">{"0"}</div>
-                            <div class="stat-label">{"років досвіду"}</div>
-                        </div>
-                    </div>
                 </div>
 
                 // Right side - Contact options
@@ -176,19 +150,6 @@ pub fn CTASection() -> Html {
                         </a>
                     </div>
 
-                    // Social proof
-                    <div class="social-proof">
-                        <div class="avatars">
-                            <div class="avatar avatar-1"></div>
-                            <div class="avatar avatar-2"></div>
-                            <div class="avatar avatar-3"></div>
-                            <div class="avatar avatar-4"></div>
-                        </div>
-                        <div class="proof-text">
-                            <span class="proof-number">{"120+"}</span>
-                            {" клієнтів обирають нас щомісяця"}
-                        </div>
-                    </div>
                 </div>
             </div>
 

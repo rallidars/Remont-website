@@ -240,6 +240,7 @@ pub fn Calculator() -> Html {
     let progress = ((*current_step as f32 + 1.0) / steps.len() as f32) * 100.0;
 
     html! {
+        <div class="calculator-main">
         <section class="calculator-section">
             <div class="calculator-container">
                 <div class="calculator-header">
@@ -283,7 +284,7 @@ pub fn Calculator() -> Html {
                                     <h3 class="step-question">{&steps[0].description}</h3>
                                     <div class="options-grid">
                                         {[
-                                            ("Квартира", PropertyType::Apartment, "#2c5282"),
+                                            ("Квартира", PropertyType::Apartment, "#f56565"),
                                             ("Будинок", PropertyType::House, "#38a169"),
                                             ("Офіс", PropertyType::Office, "#d69e2e"),
                                             ("Комерція", PropertyType::Commercial, "#9f7aea"),
@@ -665,5 +666,6 @@ pub fn Calculator() -> Html {
                 </div>
             </div>
         </section>
+        </div>
     }
 }
