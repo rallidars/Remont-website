@@ -61,6 +61,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "frontend"
+version = "0.1.0"
+dependencies = [
+ "gloo",
+ "gloo-console",
+ "gloo-events",
+ "gloo-net 0.2.6",
+ "gloo-timers",
+ "gloo-utils 0.2.0",
+ "log",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+ "yew",
+ "yew-hooks",
+]
+
+[[package]]
 name = "futures"
 version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -576,27 +597,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "21b2ebcf727b7760c461f091f9f0f539b77b8e87f2fd88131e7f1b433b3cece4"
 dependencies = [
  "proc-macro2",
-]
-
-[[package]]
-name = "remont_website"
-version = "0.1.0"
-dependencies = [
- "gloo",
- "gloo-console",
- "gloo-events",
- "gloo-net 0.2.6",
- "gloo-timers",
- "gloo-utils 0.2.0",
- "log",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
- "yew",
- "yew-hooks",
 ]
 
 [[package]]
