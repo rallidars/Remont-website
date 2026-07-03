@@ -240,8 +240,8 @@ pub fn Calculator() -> Html {
     let progress = ((*current_step as f32 + 1.0) / steps.len() as f32) * 100.0;
 
     html! {
-        <div class="calculator-main">
-        <section class="calculator-section">
+        <div class="calculator-main" id="calculator">
+        <section class="calculator-section" >
             <div class="calculator-container">
                 <div class="calculator-header">
                     <h2 class="calculator-title">

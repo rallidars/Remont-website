@@ -60,22 +60,24 @@ pub fn PortfolioGallery() -> Html {
         (ProjectCategory::Design, "Дизайн", "#d69e2e"),
     ];
 
-    let projects = use_state(|| None::<ProjectCategory>);
+    //let projects = use_state(|| None::<Vec<PortfolioProject>>);
+    let projects = Vec::<PortfolioProject>::new();
 
-    use_async_with_options(
-        async move {
-            match ApiRequest::get(format!("{}/portfolio_gallery", BACKEND_URL))
-                .json_response::<Vec<PortfolioProject>>()
-                .await
-            {
-                Ok(data) => projects.set(data),
-                Err(_) => {}
-            }
-            Ok::<(), ()>(());
-        },
-        UseAsyncOptions::enable_auto(),
-    );
-    // Filter projects by category
+
+    //use_async_with_options(
+    //    async move {
+    //        match ApiRequest::get(format!("{}/portfolio_gallery", BACKEND_URL))
+    //            .json_response::<Vec<PortfolioProject>>()
+    //            .await
+    //        {
+    //            Ok(data) => projects.set(data),
+    //            Err(_) => {}
+    //        }
+    //        Ok::<(), ()>(());
+    //    },
+    //    UseAsyncOptions::enable_auto(),
+    //);
+    //// Filter projects by category
     let filtered_projects = if *active_category == ProjectCategory::All {
         projects.clone()
     } else {
@@ -221,7 +223,7 @@ pub fn PortfolioGallery() -> Html {
 
     html! {
                     <div class="portfolio-main">
-                    <section class="portfolio-section">
+                    <section class="portfolio-section" id="portfolio">
                         <div class="portfolio-background">
                             <div class="bg-particles"></div>
                             <div class="bg-gradient"></div>

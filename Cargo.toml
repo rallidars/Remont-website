@@ -23,7 +23,7 @@ log ="0.4.27"
 [dependencies.web-sys]
 version = "0.3.60"
 features = [
-    "HtmlInputElement",
+  "HtmlInputElement",
   "Window",
   "Document",
   "Element",
@@ -32,10 +32,11 @@ features = [
   "IntersectionObserver",
   "IntersectionObserverEntry",
   "ScrollOptions",
-  "ScrollToOptions"
-  ,"ScrollBehavior",
+  "ScrollToOptions",
+  "ScrollBehavior",
   "HtmlSelectElement",
   "Clipboard",  
   "DomRect",
-
+  "ScrollIntoViewOptions",
+  "ScrollToOptions"
 ]

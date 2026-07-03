@@ -15,12 +15,16 @@ use crate::navbar::{Navbar, NavbarState};
 use crate::preloading::Preloading;
 use crate::price_catalog::PriceCatalog;
 use yew::prelude::*;
+use web_sys::window;
+use yew_hooks::{UseAsyncOptions, use_async, use_async_with_options};
 
 pub const BACKEND_URL: &'static str = "http://127.0.0.1:3000/api";
 
 #[component]
 fn App() -> Html {
     let current_page = use_state(|| NavbarState::Home);
+    let should_scroll=use_state(|| true);
+
 
     let on_navigate = {
         let current_page = current_page.clone();
@@ -30,29 +34,13 @@ fn App() -> Html {
     };
     html! {
     <>
-        <div class="navbar-main">
         <Navbar current_page={(*current_page).clone()} on_navigate={on_navigate} />
-        </div>
-        {match *current_page{
-        NavbarState::Home => { html!{
-            <Preloading />
-        }}
-        NavbarState::Calculator => { html!{
+        <Preloading />
         <Calculator />
-        }}
-        NavbarState::Gallery => { html!{
         <PortfolioGallery />
-        }}
-        NavbarState::Process => { html!{
         <HowWeWork />
-        }}
-        NavbarState::WorkPrices => { html!{
         <PriceCatalog />
-        }}
-        NavbarState::CTA => { html!{
         <CTASection />
-        }}
-        }}
     </>
 
     }

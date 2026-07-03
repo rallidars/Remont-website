@@ -513,7 +513,7 @@ pub fn PriceCatalog() -> Html {
     };
 
     html! {
-        <div class="price-catalog-main">
+        <div class="price-catalog-main" id="price-catalog">
     <div class="price-list-app">
         <div class="pl-main">
             <div class="pl-header">

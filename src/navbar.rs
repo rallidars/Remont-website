@@ -92,20 +92,24 @@ pub fn Navbar(props: &NavbarProps) -> Html {
         })
     };
 
-    let navigate = {
-        let on_navigate = props.on_navigate.clone();
-        let is_mobile_menu_open = is_mobile_menu_open.clone();
-        Callback::from(move |path: NavbarState| {
-            on_navigate.emit(path.clone());
-            is_mobile_menu_open.set(false);
+let navigate = {
+    let on_navigate = props.on_navigate.clone();
+    let is_mobile_menu_open = is_mobile_menu_open.clone();
 
-            // Smooth scroll to top
-            if let Some(window) = window() {
-                window.scroll_to_with_x_and_y(0.0, 0.0);
-            }
-        })
-    };
+    Callback::from(move |page: NavbarState| {
+        on_navigate.emit(page.clone());
+        is_mobile_menu_open.set(false);
 
+        match page {
+            NavbarState::Home => scroll_to("home"),
+            NavbarState::Calculator => scroll_to("calculator"),
+            NavbarState::Gallery => scroll_to("portfolio"),
+            NavbarState::Process => scroll_to("proces"),
+            NavbarState::WorkPrices => scroll_to("price-catalog"),
+            NavbarState::CTA => scroll_to("cta"),
+        }
+    })
+};
     let set_hovered_item = {
         let hovered_item = hovered_item.clone();
         Callback::from(move |id: Option<usize>| {
@@ -154,7 +158,7 @@ pub fn Navbar(props: &NavbarProps) -> Html {
                             let set_hovered_item = set_hovered_item.clone();
 
                             html! {
-                                <div
+                                <div 
                                     class={classes!(
                                         "nav-item",
                                         if is_active { "active" } else { "" },
@@ -292,5 +296,20 @@ pub fn Navbar(props: &NavbarProps) -> Html {
             </div>
         </nav>
         </div>
+    }
+}
+
+
+use web_sys::{ScrollBehavior, ScrollIntoViewOptions};
+
+fn scroll_to(id: &str) {
+    if let Some(document) = window().unwrap().document() {
+        if let Some(element) = document.get_element_by_id(id) {
+            let options = ScrollIntoViewOptions::new();
+            options.set_behavior(ScrollBehavior::Smooth);
+
+            element.scroll_into_view_with_scroll_into_view_options(&options);
+
+        }
     }
 }

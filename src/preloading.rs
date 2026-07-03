@@ -16,27 +16,8 @@ pub fn Preloading() -> Html {
     let phase_state = use_state(|| PhaseState::OneByOne);
     let show_title = use_state(|| false);
     let title_animation_step = use_state(|| 0usize);
-    let images = use_state(|| Vec::<String>::new());
+    let images = use_state(|| vec!["image_remont1.jpeg", "image_remont2.jpeg", "image_remont3.jpeg", "image_remont4.jpeg"]);
 
-    let _get_images = use_async_with_options(
-        {
-            let images = images.clone();
-            async move {
-                match ApiRequest::get(format!("{}/main_page", BACKEND_URL))
-                    .json_response::<Vec<String>>()
-                    .await
-                {
-                    Ok(data) => {
-                        images.set(data);
-                    }
-                    Err(_) => {}
-                }
-
-                Ok::<(), ()>(())
-            }
-        },
-        UseAsyncOptions::enable_auto(),
-    );
 
     {
         let step = step.clone();
@@ -79,6 +60,7 @@ pub fn Preloading() -> Html {
     }
 
     html! {
+        <section id="home">
     <div class="preloader-main">
     <div class={format!("preloader preloader-active {}", if matches!(*phase_state, PhaseState::Complete){""} else{"completed"})}>
         <div class="progress-bar">
@@ -110,7 +92,7 @@ pub fn Preloading() -> Html {
 
                 html! {
                     <div class={class}>
-                        <img src={src.clone()} />
+                        <img src={format!("static/{}", src.clone())} />
                     </div>
                 }
             }else{html!{}}}
@@ -144,5 +126,6 @@ pub fn Preloading() -> Html {
                 }
     </div>
         </div>
+        </section>
     }
 }

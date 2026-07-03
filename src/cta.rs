@@ -38,7 +38,7 @@ pub fn CTASection() -> Html {
 
     html! {
         <div class="cta-main">
-        <section class={classes!("cta-section", if *show_form { "form-active" } else { "" })}>
+        <section id="cta" class={classes!("cta-section", if *show_form { "form-active" } else { "" })}>
             // Main content container
             <div class="cta-container">
                 // Left side - Main message

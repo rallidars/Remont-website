@@ -158,6 +158,7 @@ pub fn HowWeWork() -> Html {
             <div class="how-we-work-main">
             <style>{style}</style>
             <section
+                id="proces"
                 class="processes-section"
             >
                 <div class="processes-container">
