@@ -92,24 +92,24 @@ pub fn Navbar(props: &NavbarProps) -> Html {
         })
     };
 
-let navigate = {
-    let on_navigate = props.on_navigate.clone();
-    let is_mobile_menu_open = is_mobile_menu_open.clone();
+    let navigate = {
+        let on_navigate = props.on_navigate.clone();
+        let is_mobile_menu_open = is_mobile_menu_open.clone();
 
-    Callback::from(move |page: NavbarState| {
-        on_navigate.emit(page.clone());
-        is_mobile_menu_open.set(false);
+        Callback::from(move |page: NavbarState| {
+            on_navigate.emit(page.clone());
+            is_mobile_menu_open.set(false);
 
-        match page {
-            NavbarState::Home => scroll_to("home"),
-            NavbarState::Calculator => scroll_to("calculator"),
-            NavbarState::Gallery => scroll_to("portfolio"),
-            NavbarState::Process => scroll_to("proces"),
-            NavbarState::WorkPrices => scroll_to("price-catalog"),
-            NavbarState::CTA => scroll_to("cta"),
-        }
-    })
-};
+            match page {
+                NavbarState::Home => scroll_to("home"),
+                NavbarState::Calculator => scroll_to("calculator"),
+                NavbarState::Gallery => scroll_to("portfolio"),
+                NavbarState::Process => scroll_to("process"),
+                NavbarState::WorkPrices => scroll_to("price-catalog"),
+                NavbarState::CTA => scroll_to("cta"),
+            }
+        })
+    };
     let set_hovered_item = {
         let hovered_item = hovered_item.clone();
         Callback::from(move |id: Option<usize>| {
@@ -158,7 +158,7 @@ let navigate = {
                             let set_hovered_item = set_hovered_item.clone();
 
                             html! {
-                                <div 
+                                <div
                                     class={classes!(
                                         "nav-item",
                                         if is_active { "active" } else { "" },
@@ -275,8 +275,8 @@ let navigate = {
                     <div class="mobile-contact">
                         <div class="contact-info">
                             <div class="contact-title">{"Замовити консультацію"}</div>
-                            <div class="contact-phone">{"+38 (067) 123-45-67"}</div>
-                            <div class="contact-hours">{"Пн-Пт: 9:00-18:00"}</div>
+                            <div class="contact-phone">{"+38 (063) 535-31-30"}</div>
+                            <div class="contact-hours">{"Пн-Нд: 9:00-18:00"}</div>
                         </div>
                         <button
                             class="mobile-contact-button"
@@ -299,7 +299,6 @@ let navigate = {
     }
 }
 
-
 use web_sys::{ScrollBehavior, ScrollIntoViewOptions};
 
 fn scroll_to(id: &str) {
@@ -309,7 +308,6 @@ fn scroll_to(id: &str) {
             options.set_behavior(ScrollBehavior::Smooth);
 
             element.scroll_into_view_with_scroll_into_view_options(&options);
-
         }
     }
 }

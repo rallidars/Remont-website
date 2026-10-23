@@ -155,102 +155,65 @@ pub fn HowWeWork() -> Html {
     };
 
     html! {
-            <div class="how-we-work-main">
-            <style>{style}</style>
-            <section
-                id="proces"
-                class="processes-section"
-            >
-                <div class="processes-container">
-                    <div class="processes-header">
-                        <h2 class="processes-title">
-                            <span class="title-glow">{"ЯК МИ ПРАЦЮЄМО"}</span>
+        <div class="ap-how-we-work-main">
+            <section id="process" class="ap-processes-section">
+                <div class="ap-processes-container">
+                    <div class="ap-processes-header">
+                        <h2 class="ap-processes-title">
+                            <span class="ap-title-glow">{"ЯК МИ ПРАЦЮЄМО"}</span>
                         </h2>
-                        <p class="processes-subtitle">
-                            {"Прозорий процес від першої зустрічі до здачі об'єкта"}
-                        </p>
                     </div>
 
-                        <div class="process-timeline">
-        <div class="timeline-track">
+                    <div class="ap-process-timeline">
+                        <div class="ap-timeline-track">
+                            <div class="ap-timeline-progress" style={format!(
+                                "width: {}%;",
+                                if processes.len() > 1 {
+                                    (*active_step as f32 / (processes.len() - 1) as f32) * 100.0
+                                } else { 0.0 }
+                            )} />
 
-            // Desktop progress width
-            <div
-                class="timeline-progress"
-                style={format!(
-                    "width: {}%;",
-                    if processes.len() > 1 {
-                        (*active_step as f32 / (processes.len() - 1) as f32) * 100.0
-                    } else {
-                        0.0
-                    }
-                )}
-            />
+                            {for processes.iter().enumerate().map(|(index, step)| {
+                                let is_active = index == *active_step;
+                                let is_passed = index < *active_step;
+                                let set_step = set_active_step.clone();
+                                let step_id = index;
 
-            {for processes.iter().enumerate().map(|(index, step)| {
+                                let percent = if processes.len() > 1 {
+                                    index as f32 / (processes.len() - 1) as f32 * 100.0
+                                } else { 0.0 };
 
-                let is_active = index == *active_step;
-                let is_passed = index < *active_step;
-                let set_step = set_active_step.clone();
-                let step_id = index;
-
-                // 🔥 Dynamic percentage calculation
-                let percent = if processes.len() > 1 {
-                    index as f32 / (processes.len() - 1) as f32 * 100.0
-                } else {
-                    0.0
-                };
-
-                html! {
-                    <div
-                        class={classes!(
-                            "timeline-step",
-                            if is_active { "active" } else { "" },
-                            if is_passed { "passed" } else { "" }
-                        )}
-                        style={format!("left: {}%;", percent)}
-                        onclick={Callback::from(move |_| set_step.emit(step_id))}
-                    >
-                        <div class="step-marker">
-                            <div class="marker-outer">
-                                <div
-                                    class="marker-inner"
-                                    style={format!("background: {}", step.color)}
-                                >
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                        <path
-                                            d={step.icon}
-                                            stroke="white"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <div class="step-tooltip">
-                                <div class="tooltip-title">{&step.title}</div>
-                            </div>
-                        </div>
-
-                        <div class="step-info">
-                            <div class="step-duration">{&step.duration}</div>
-                        </div>
-                    </div>
-                }
-            })}
-        </div>
-    </div>
-
-                    <div class={classes!("process-content", format!("animation-{}", *animation_state))}>
-                        <div class="process-details">
-                            <div class="process-header">
-                                <div class="process-title-wrapper">
+                                html! {
                                     <div
-                                        class="process-icon"
-                                        style={format!("background: {}", processes[*active_step].color)}
+                                        class={classes!(
+                                            "ap-timeline-step",
+                                            if is_active { "active" } else { "" },
+                                            if is_passed { "passed" } else { "" }
+                                        )}
+                                        style={format!("left: {}%;", percent)}
+                                        onclick={Callback::from(move |_| set_step.emit(step_id))}
                                     >
+                                        <div class="ap-step-marker">
+                                            <div class="ap-marker-outer">
+                                                <div class="ap-marker-inner" style={format!("background: {}", step.color)}>
+                                                    <span class="ap-step-number">{index + 1}</span>
+                                                </div>
+                                            </div>
+                                            <div class="ap-step-tooltip">
+                                                <div class="ap-tooltip-duration">{&step.duration}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            })}
+                        </div>
+                    </div>
+
+                    <div class={classes!("ap-process-content", format!("animation-{}", *animation_state))}>
+                        <div class="ap-process-details">
+                            <div class="ap-process-header">
+                                <div class="ap-process-title-wrapper">
+                                    <div class="ap-process-icon" style={format!("background: {}", processes[*active_step].color)}>
                                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                                             <path d={processes[*active_step].icon}
                                                   stroke="white"
@@ -260,35 +223,32 @@ pub fn HowWeWork() -> Html {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="process-title">{&processes[*active_step].title}</h3>
-                                        <p class="process-description">{&processes[*active_step].description}</p>
+                                        <h3 class="ap-process-title">{&processes[*active_step].title}</h3>
+                                        <p class="ap-process-description">{&processes[*active_step].description}</p>
                                     </div>
                                 </div>
-                                <div class="process-stats">
-                                    <div class="stat-item">
-                                        <div class="stat-value">{processes[*active_step].duration.clone()}</div>
-                                        <div class="stat-label">{"Тривалість"}</div>
+                                <div class="ap-process-stats">
+                                    <div class="ap-stat-item">
+                                        <div class="ap-stat-value">{processes[*active_step].duration.clone()}</div>
+                                        <div class="ap-stat-label">{"Тривалість"}</div>
                                     </div>
-                                    <div class="stat-item">
-                                        <div class="stat-value">{processes[*active_step].details.len()}</div>
-                                        <div class="stat-label">{"Етапи"}</div>
+                                    <div class="ap-stat-item">
+                                        <div class="ap-stat-value">{processes[*active_step].details.len()}</div>
+                                        <div class="ap-stat-label">{"Етапи"}</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="process-list">
+                            <div class="ap-process-list">
                                 {for processes[*active_step].details.iter().enumerate().map(|(i, detail)| {
                                     html! {
-                                        <div class="process-item" key={i}>
-                                            <div
-                                                class="process-item-marker"
-                                                style={format!("background: {}", processes[*active_step].color)}
-                                            >
-                                                <div class="item-number">{i + 1}</div>
+                                        <div class="ap-process-item">
+                                            <div class="ap-process-item-marker" style={format!("background: {}", processes[*active_step].color)}>
+                                                <div class="ap-item-number">{i + 1}</div>
                                             </div>
-                                            <div class="process-item-content">
-                                                <div class="item-text">{detail}</div>
-                                                <div class="item-status">
+                                            <div class="ap-process-item-content">
+                                                <div class="ap-item-text">{detail}</div>
+                                                <div class="ap-item-status">
                                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                                         <path d="M5 13l4 4L19 7"
                                                               stroke="currentColor"
@@ -304,20 +264,9 @@ pub fn HowWeWork() -> Html {
                                 })}
                             </div>
                         </div>
-
-                        <div class="process-visual">
-                            <div class="visual-container">
-                                <div class="visual-scene">
-                                    <div class="scene-element scene-room">
-                                    <img src="/static/image_remont1.jpeg" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </section>
-            </div>
-        }
+        </div>
+    }
 }

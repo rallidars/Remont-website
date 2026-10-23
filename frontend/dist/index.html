@@ -2,21 +2,27 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Yew App</title>
-    <link rel="modulepreload" href="/remont_website-b7910ef2d50b45a5.js" crossorigin="anonymous" integrity="sha384-gLjrbpcukzF8rlFx1zepkYp5qhIzfgM6sZlpDJei2iXu3uAICwBlUWOGv9fMpttP"><link rel="preload" href="/remont_website-b7910ef2d50b45a5_bg.wasm" crossorigin="anonymous" integrity="sha384-NWosQIISHHUENT6hiqQW0DNO796VY+RLUPsw5oyZ6ctrnwx3GmJX+8iPexo6SLrZ" as="fetch" type="application/wasm"></head>
-    <link rel="stylesheet" href="/preloading-2c1779b0de30c701.css" integrity="sha384-NggitiNFRw6V1h0iOAm5t23qZzUm1nazCe2XGHMkw8g9cKNzBcd86wa+y7vSqV8K"/>
-    <link rel="stylesheet" href="/calculator-e6f36bcf7cf66107.css" integrity="sha384-MnTiTfZmEFXvqt0sNSFixTfb9eS7K5WUVa4KIRNUiEXSMRRK45Fe0g1juOligqfL"/>
-    <link rel="stylesheet" href="/background-1901b65690927b83.css" integrity="sha384-htw0Y+1EauhrlR4uzL63KEmFFFJYuTWaKMYpiENgIn9v6wMXg8YGkdHnWQJP+YdH"/>
-    <link rel="stylesheet" href="/cta-279ff23b015fd988.css" integrity="sha384-5ZNOc5pSQM4LV8CqdpeQC07uHzecGDFtg4Ra37fspe2ilAHEFNWsrJHPeBoVDqy8"/>
-    <link rel="stylesheet" href="/gallery-e2bfe6cbb74d7096.css" integrity="sha384-mXKwdsmCo5zXF9LsqksBqCzt5rvnxfpO3aLk6Mt8MXV6AW9Ry3VJgSBqzL17FlqQ"/>
-    <link rel="stylesheet" href="/ending-db97125f2751808e.css" integrity="sha384-nkxhdBhIXdzSDnBy7C5mpWEwM4vTPTT2zWV0fpudrJt6iEXQE6nPciZFjWdhAi+s"/>
-    <link rel="stylesheet" href="/navabar-f2428590b8974003.css" integrity="sha384-YKRX9MJFHZtfvE6M5MOxV4mrPdVYdxQtw7MQeAcJrQE0HLQ/ZQwghODv0EJQJKr5"/>
-    <link rel="stylesheet" href="/how_we_work-35571c831ff4f0ae.css" integrity="sha384-G6HEy+lwTnw46KjT4aQo+xcEIsSAqhC0j586t3RMba/wwqLeoLiDL1pyKi0/dYBN"/>
+        <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+          />
+              <title>Gradprus</title>
+          <link rel="modulepreload" href="/frontend-be82be5ff74332b.js" crossorigin="anonymous" integrity="sha384-4SKVmrb4NBSghKDk/hxovfK4BFPPMXd27R3w60/XxtyUqVIxQfokrTgfc09j6Wjl"><link rel="preload" href="/frontend-be82be5ff74332b_bg.wasm" crossorigin="anonymous" integrity="sha384-CsHVYEgTR44ikM772fXeXdQl6FkHS7yOb4xQZa/eF0anDn2/EazaxUqMizv4MNkI" as="fetch" type="application/wasm"></head>
+
+ <link rel="icon" href="/favicon2-15b181956376125f.ico" integrity="sha384-mw5eMKKuV09kHW8SF29hMcIMASHjzW/Z7AdOp9RG44txNvbA46JwqJ1+NR/fQNG1"/>
+    <link rel="stylesheet" href="/gallery-2ed39db34d0ab76f.css" integrity="sha384-S6ShWOENXDP0IFtnQSxa5rXdm23yLvHspKqzfsk8GkjBjRg3OmWRSVPgAigF0zp+"/>
+    <link rel="stylesheet" href="/preloading-6c4a1fb533815ab5.css" integrity="sha384-3uai4tzrOnAoFlWsUSu8gAiFu0Jcv9l+XQHwcbK3em5NwCP0ry0TxQafhZJONrsY"/>
+    <link rel="stylesheet" href="/calculator-61699a53e8067d51.css" integrity="sha384-uAAXU1A3ghuB2vrZIjCxzmSet9fL/uZOQajNsF3fSvxOMsUDi0wn6uIc6wvxjLCc"/>
+    <link rel="stylesheet" href="/background-9ea988b17f12a586.css" integrity="sha384-pTrCGcy7umDEtKmn56sSay3vuKoPII6blSmWHQ8wdFfLylEA2miLOEYv37PwULvK"/>
+    <link rel="stylesheet" href="/cta-2a9fd44d5c2a40d5.css" integrity="sha384-X3nFv6mzEtHrlHddVlW9fBvli1BPIdSqjxg4K/67950xONWy99d/IqP7XMOXQVaR"/>
+    <link rel="stylesheet" href="/ending-c5690205308a0d1d.css" integrity="sha384-gqIrJYM/YM4VLlJcQ9gbxV1ZhZx7vIFqiEhdQDSRgILx8+mVjoT/M90ar9DB80fv"/>
+    <link rel="stylesheet" href="/navabar-18ebf87f9c481300.css" integrity="sha384-fENPEFB0mHAUwXuwAvR316m2HhcB1cqRFeU0iC9ImaBDTRZ23Z85XqwRRfZRm45N"/>
+    <link rel="stylesheet" href="/how_we_work-6fbd6010e0b4c3a4.css" integrity="sha384-IaXrbhm8YK9FqvcFLcqs8+QTjB38JTg9nwODIBanhEy8BXGaHePcTmte6j6/MgJ6"/>
     
     <body>
 <script type="module">
-import init, * as bindings from '/remont_website-b7910ef2d50b45a5.js';
-const wasm = await init({ module_or_path: '/remont_website-b7910ef2d50b45a5_bg.wasm' });
+import init, * as bindings from '/frontend-be82be5ff74332b.js';
+const wasm = await init({ module_or_path: '/frontend-be82be5ff74332b_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -24,134 +30,5 @@ window.wasmBindings = bindings;
 
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
-</script><script>"use strict";
-
-(function () {
-
-    const address = '{{__TRUNK_ADDRESS__}}';
-    const base = '{{__TRUNK_WS_BASE__}}';
-    let protocol = '';
-    protocol =
-        protocol
-            ? protocol
-            : window.location.protocol === 'https:'
-                ? 'wss'
-                : 'ws';
-    const url = protocol + '://' + address + base + '.well-known/trunk/ws';
-
-    class Overlay {
-        constructor() {
-            // create an overlay
-            this._overlay = document.createElement("div");
-            const style = this._overlay.style;
-            style.height = "100vh";
-            style.width = "100vw";
-            style.position = "fixed";
-            style.top = "0";
-            style.left = "0";
-            style.backgroundColor = "rgba(222, 222, 222, 0.5)";
-            style.fontFamily = "sans-serif";
-            // not sure that's the right approach
-            style.zIndex = "1000000";
-            style.backdropFilter = "blur(1rem)";
-
-            const container = document.createElement("div");
-            // center it
-            container.style.position = "absolute";
-            container.style.top = "30%";
-            container.style.left = "15%";
-            container.style.maxWidth = "85%";
-
-            this._title = document.createElement("div");
-            this._title.innerText = "Build failure";
-            this._title.style.paddingBottom = "2rem";
-            this._title.style.fontSize = "2.5rem";
-
-            this._message = document.createElement("div");
-            this._message.style.whiteSpace = "pre-wrap";
-
-            const icon= document.createElement("div");
-            icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#dc3545" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>';
-            this._title.prepend(icon);
-
-            container.append(this._title, this._message);
-            this._overlay.append(container);
-
-            this._inject();
-            window.setInterval(() => {
-                this._inject();
-            }, 250);
-        }
-
-        set reason(reason) {
-            this._message.textContent = reason;
-        }
-
-        _inject() {
-            if (!this._overlay.isConnected) {
-                // prepend it
-                document.body?.prepend(this._overlay);
-            }
-        }
-
-    }
-
-    class Client {
-        constructor(url) {
-            this.url = url;
-            this.poll_interval = 5000;
-            this._overlay = null;
-        }
-
-        start() {
-            const ws = new WebSocket(this.url);
-            ws.onmessage = (ev) => {
-                const msg = JSON.parse(ev.data);
-                switch (msg.type) {
-                    case "reload":
-                        this.reload();
-                        break;
-                    case "buildFailure":
-                        this.buildFailure(msg.data)
-                        break;
-                }
-            };
-            ws.onclose = () => this.onclose();
-        }
-
-        onclose() {
-            window.setTimeout(
-                () => {
-                    // when we successfully reconnect, we'll force a
-                    // reload (since we presumably lost connection to
-                    // trunk due to it being killed, so it will have
-                    // rebuilt on restart)
-                    const ws = new WebSocket(this.url);
-                    ws.onopen = () => window.location.reload();
-                    ws.onclose = () => this.onclose();
-                },
-                this.poll_interval);
-        }
-
-        reload() {
-            window.location.reload();
-        }
-
-        buildFailure({reason}) {
-            // also log the console
-            console.error("Build failed:", reason);
-
-            console.debug("Overlay", this._overlay);
-
-            if (!this._overlay) {
-                this._overlay = new Overlay();
-            }
-            this._overlay.reason = reason;
-        }
-    }
-
-    new Client(url).start();
-
-})()
 </script></body>
 </html>

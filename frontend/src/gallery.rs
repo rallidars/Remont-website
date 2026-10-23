@@ -61,8 +61,71 @@ pub fn PortfolioGallery() -> Html {
     ];
 
     //let projects = use_state(|| None::<Vec<PortfolioProject>>);
-    let projects = Vec::<PortfolioProject>::new();
+    let projects = vec![
+    PortfolioProject {
+        id: 1,
+        images: vec![
+            "/static/gallery/obj1/1.JPG".to_string(),
+            "/static/gallery/obj1/2.JPG".to_string(),
+            "/static/gallery/obj1/3.JPG".to_string(),
+            "/static/gallery/obj1/4.JPG".to_string(),
+            "/static/gallery/obj1/5.JPG".to_string(),
+            "/static/gallery/obj1/6.JPG".to_string(),
+            "/static/gallery/obj1/7.JPG".to_string(),
+            "/static/gallery/obj1/8.JPG".to_string(),
+        ],
+        title: "Сучасна квартира в новобудові".to_string(),
+        description: "Повна реконструкція квартири з переплануванням, заміною інженерних мереж, оздобленням та монтажем сантехніки й електрики.".to_string(),
+        category: ProjectCategory::Apartments,
+        area: 65,
+        duration: "3 місяці".to_string(),
+        comparison_images: vec![
+        ],
+        features: vec![
+            "Повна заміна електрики".to_string(),
+            "Нова сантехніка".to_string(),
+            "Водяна тепла підлога".to_string(),
+            "Керамограніт у санвузлі".to_string(),
+            "Натяжна стеля".to_string(),
+            "Міжкімнатні двері".to_string(),
+        ],
+        color: "#4299e1".to_string(),
+        year: 2026,
+        is_featured: true,
+    },
 
+    PortfolioProject {
+        id: 2,
+        images: vec![
+            "/static/gallery/obj2/1.jpg".to_string(),
+            "/static/gallery/obj2/2.jpg".to_string(),
+            "/static/gallery/obj2/3.jpg".to_string(),
+            "/static/gallery/obj2/4.jpg".to_string(),
+            "/static/gallery/obj2/5.jpg".to_string(),
+            "/static/gallery/obj2/6.jpg".to_string(),
+            "/static/gallery/obj2/7.jpg".to_string(),
+        ],
+        title: "Реконструкція квартири".to_string(),
+        description: "Комплексна реконструкція квартири з утепленням, новою системою опалення та внутрішнім оздобленням.".to_string(),
+        category: ProjectCategory::Apartments,
+        area: 36,
+        duration: "3 місяці".to_string(),
+        comparison_images: vec![
+        ],
+        features: vec![
+            "Утеплення стін".to_string(),
+            "Нова система опалення".to_string(),
+            "Монтаж електрощита".to_string(),
+            "Водяна тепла підлога".to_string(),
+            "Штукатурка стін".to_string(),
+            "Укладання плитки".to_string(),
+            "Фарбування".to_string(),
+        ],
+        color: "#ed8936".to_string(),
+        year: 2026,
+        is_featured: true,
+    },
+];
 
     //use_async_with_options(
     //    async move {

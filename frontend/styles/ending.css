@@ -1,7 +1,7 @@
 /* PriceList.css - унікальна розтановка */
 
-.price-catalog-main {
-  .price-list-app {
+.pl-price-catalog-main {
+  .pl-price-list-app {
     display: flex;
     justify-content: center;
     padding-top: 80px;
@@ -11,22 +11,6 @@
     position: relative;
   }
 
-  /* Фонові ефекти */
-  .pl-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-
-
-
-
-  /* Основний контент */
   .pl-main {
     padding: 2rem;
     position: relative;
@@ -63,19 +47,6 @@
     font-size: 2rem;
   }
 
-  .pl-breadcrumbs {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .pl-breadcrumbs span:last-child {
-    color: #fff;
-  }
-
-  /* Банер */
   .pl-banner {
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
     border: 1px solid rgba(59, 130, 246, 0.2);
@@ -87,20 +58,19 @@
     margin-bottom: 2.5rem;
   }
 
-  .banner-icon {
+  .pl-banner-icon {
     color: #3b82f6;
   }
 
-  .banner-text {
+  .pl-banner-text {
     color: #cbd5e0;
     font-size: 0.95rem;
   }
 
-  .banner-text strong {
+  .pl-banner-text strong {
     color: #fff;
   }
 
-  /* Секції */
   .pl-sections {
     display: flex;
     flex-direction: column;
@@ -130,13 +100,13 @@
     transition: all 0.2s ease;
   }
 
-  .section-header-left {
+  .pl-section-header-left {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
 
-  .section-icon {
+  .pl-section-icon {
     width: 48px;
     height: 48px;
     border-radius: 12px;
@@ -145,34 +115,33 @@
     justify-content: center;
   }
 
-  .section-title {
+  .pl-section-title {
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
     color: #fff;
   }
 
-  .section-header-right {
+  .pl-section-header-right {
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
 
-  .section-count {
+  .pl-section-count {
     color: #94a3b8;
     font-size: 0.9rem;
   }
 
-  .section-arrow {
+  .pl-section-arrow {
     transition: transform 0.3s ease;
   }
 
-  /* Таблиця цін */
   .pl-section-content {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .price-table-header {
+  .pl-price-table-header {
     display: grid;
     grid-template-columns: 80px 1fr 60px 100px 100px 80px 80px 100px;
     gap: 0.5rem;
@@ -185,7 +154,7 @@
     letter-spacing: 0.05em;
   }
 
-  .price-row {
+  .pl-price-row {
     display: grid;
     grid-template-columns: 80px 1fr 60px 100px 100px 80px 80px 100px;
     gap: 0.5rem;
@@ -195,66 +164,66 @@
     transition: all 0.2s ease;
   }
 
-  .price-row:hover {
+  .pl-price-row:hover {
     background: rgba(255, 255, 255, 0.02);
   }
 
-  .price-row.popular {
+  .pl-price-row.popular {
     background: rgba(245, 158, 11, 0.05);
     border-left: 3px solid #f59e0b;
   }
 
-  .pos-code {
+  .pl-pos-code {
     font-family: 'Fira Code', monospace;
     color: #94a3b8;
     font-size: 0.85rem;
   }
 
-  .pos-name {
+  .pl-pos-name {
     font-weight: 600;
     color: #fff;
     margin-bottom: 0.25rem;
   }
 
-  .pos-desc {
+  .pl-pos-desc {
     font-size: 0.85rem;
     color: #94a3b8;
   }
 
-  .pos-unit {
+  .pl-pos-unit {
     color: #cbd5e0;
     font-size: 0.9rem;
   }
 
-  .price-value {
+  .pl-price-value {
     font-weight: 700;
     color: #3b82f6;
   }
 
-  .price-value.with-discount {
+  .pl-price-value.with-discount {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
 
-  .old-price {
+  .pl-old-price {
     color: #94a3b8;
     font-size: 0.85rem;
     text-decoration: line-through;
   }
 
-  .new-price {
+  .pl-new-price {
     color: #10b981;
     font-weight: 800;
   }
 
-  .no-materials {
+  .pl-no-materials {
     color: #94a3b8;
     font-style: italic;
     font-size: 0.85rem;
   }
 
-  .complexity-indicator {
+  .pl-complexity-indicator {
     width: 28px;
     height: 28px;
     display: flex;
@@ -263,19 +232,18 @@
     color: #94a3b8;
   }
 
-  .no-guarantee {
+  .pl-no-guarantee {
     color: #94a3b8;
     font-size: 0.85rem;
   }
 
-  /* Кнопки дій */
-  .col-actions {
+  .pl-col-actions {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
 
-  .action-btn {
+  .pl-action-btn {
     width: 32px;
     height: 32px;
     border-radius: 8px;
@@ -289,13 +257,13 @@
     justify-content: center;
   }
 
-  .action-btn:hover {
+  .pl-action-btn:hover {
     background: #3b82f6;
     color: #fff;
     transform: scale(1.1);
   }
 
-  .discount-btn {
+  .pl-discount-btn {
     position: relative;
     width: auto;
     padding: 0 0.75rem;
@@ -306,63 +274,37 @@
     font-size: 0.85rem;
   }
 
-  .discount-btn.active {
+  .pl-discount-btn.active {
     background: #10b981;
     color: #fff;
   }
 
-  .discount-btn:hover {
+  .pl-discount-btn:hover {
     background: #10b981;
     color: #fff;
   }
 
-  .info-btn {
+  .pl-info-btn {
     background: rgba(59, 130, 246, 0.1);
     color: #3b82f6;
   }
 
-  .cart-btn {
+  .pl-cart-btn {
     background: rgba(139, 92, 246, 0.1);
     color: #8b5cf6;
   }
 
-  /* Футер секції */
-  .section-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    background: rgba(0, 0, 0, 0.2);
-    color: #94a3b8;
-    font-size: 0.9rem;
-  }
-
-  .min-order {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .min-order svg {
-    color: #3b82f6;
-  }
-
-  .section-total {
-    font-weight: 500;
-  }
-
-  /* Інформаційні картки */
   .pl-info {
     margin-top: 3rem;
   }
 
-  .info-grid {
+  .pl-info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 
-  .info-card {
+  .pl-info-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -371,13 +313,13 @@
     transition: all 0.3s ease;
   }
 
-  .info-card:hover {
+  .pl-info-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.03);
     border-color: #3b82f6;
   }
 
-  .info-card-icon {
+  .pl-info-card-icon {
     width: 64px;
     height: 64px;
     border-radius: 20px;
@@ -387,21 +329,21 @@
     margin: 0 auto 1.5rem;
   }
 
-  .info-card h3 {
+  .pl-info-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: #fff;
     margin-bottom: 0.5rem;
   }
 
-  .info-card p {
+  .pl-info-card p {
     color: #94a3b8;
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;
   }
 
-  /* Модальне вікно */
+  /* Modal */
   .pl-modal {
     position: fixed;
     top: 0;
@@ -414,17 +356,12 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    animation: fadeIn 0.3s ease;
+    animation: pl-fadeIn 0.3s ease;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
+  @keyframes pl-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .pl-modal-content {
@@ -435,22 +372,21 @@
     max-height: 90vh;
     overflow-y: auto;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    animation: slideUp 0.3s ease;
+    animation: pl-slideUp 0.3s ease;
   }
 
-  @keyframes slideUp {
+  @keyframes pl-slideUp {
     from {
       transform: translateY(50px);
       opacity: 0;
     }
-
     to {
       transform: translateY(0);
       opacity: 1;
     }
   }
 
-  .modal-header {
+  .pl-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -458,14 +394,14 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .modal-header h2 {
+  .pl-modal-header h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
     margin: 0;
   }
 
-  .modal-close {
+  .pl-modal-close {
     width: 40px;
     height: 40px;
     border-radius: 10px;
@@ -479,58 +415,58 @@
     justify-content: center;
   }
 
-  .modal-close:hover {
+  .pl-modal-close:hover {
     background: #ef4444;
     color: #fff;
     transform: rotate(90deg);
   }
 
-  .modal-body {
+  .pl-modal-body {
     padding: 2rem;
   }
 
-  .modal-row {
+  .pl-modal-row {
     display: flex;
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .modal-row:last-child {
+  .pl-modal-row:last-child {
     border-bottom: none;
   }
 
-  .modal-label {
+  .pl-modal-label {
     width: 140px;
     color: #94a3b8;
     font-weight: 500;
   }
 
-  .modal-value {
+  .pl-modal-value {
     flex: 1;
     color: #fff;
   }
 
-  .modal-value.price {
+  .pl-modal-value.price {
     color: #3b82f6;
     font-weight: 700;
     font-size: 1.2rem;
   }
 
-  .modal-row.highlight {
+  .pl-modal-row.highlight {
     background: rgba(16, 185, 129, 0.1);
     margin: 0.5rem 0;
     padding: 1rem;
     border-radius: 12px;
   }
 
-  .modal-footer {
+  .pl-modal-footer {
     padding: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     gap: 1rem;
   }
 
-  .modal-btn {
+  .pl-modal-btn {
     flex: 1;
     padding: 1rem;
     border-radius: 12px;
@@ -544,129 +480,119 @@
     border: none;
   }
 
-  .modal-btn.primary {
+  .pl-modal-btn.primary {
     background: #3b82f6;
     color: #fff;
   }
 
-  .modal-btn.primary:hover {
+  .pl-modal-btn.primary:hover {
     background: #2563eb;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
   }
 
-  .modal-btn.secondary {
+  .pl-modal-btn.secondary {
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
   }
 
-  .modal-btn.secondary:hover {
+  .pl-modal-btn.secondary:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 
-  /* Адаптивність */
+  // ==========================================
+  // Responsive
+  // ==========================================
   @media (max-width: 1200px) {
     .pl-main {
-      margin-left: 0px;
       padding: 1.5rem;
     }
 
-    .price-table-header,
-    .price-row {
+    .pl-price-table-header,
+    .pl-price-row {
       grid-template-columns: 80px 1fr 60px 100px 100px 80px 80px 80px;
       font-size: 0.85rem;
     }
   }
 
   @media (max-width: 1000px) {
-
-
-    .price-table-header,
-    .price-row {
+    .pl-price-table-header,
+    .pl-price-row {
       grid-template-columns: 70px 1fr 50px 90px 90px 70px 70px 70px;
     }
 
-    .info-grid {
+    .pl-info-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width: 800px) {
-    .price-list-app {
+    .pl-price-list-app {
       flex-direction: column;
     }
 
-    .pl-sidebar {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-
-    .price-table-header {
+    .pl-price-table-header {
       display: none;
     }
 
-    .price-row {
+    .pl-price-row {
       grid-template-columns: 1fr;
       gap: 0.75rem;
       padding: 1.5rem;
     }
 
-    .col-code,
-    .col-unit,
-    .col-price,
-    .col-materials,
-    .col-complexity,
-    .col-guarantee,
-    .col-actions {
+    .pl-col-code::before {
+      content: "Код:";
+      color: #94a3b8;
+    }
+
+    .pl-col-unit::before {
+      content: "Од.:";
+      color: #94a3b8;
+    }
+
+    .pl-col-price::before {
+      content: "Ціна:";
+      color: #94a3b8;
+    }
+
+    .pl-col-materials::before {
+      content: "Матеріали:";
+      color: #94a3b8;
+    }
+
+    .pl-col-complexity::before {
+      content: "Складність:";
+      color: #94a3b8;
+    }
+
+    .pl-col-guarantee::before {
+      content: "Гарантія:";
+      color: #94a3b8;
+    }
+
+    .pl-col-actions::before {
+      content: "Дії:";
+      color: #94a3b8;
+    }
+
+    .pl-col-code,
+    .pl-col-unit,
+    .pl-col-price,
+    .pl-col-materials,
+    .pl-col-complexity,
+    .pl-col-guarantee,
+    .pl-col-actions {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .col-code::before {
-      content: "Код:";
-      color: #94a3b8;
-    }
-
-    .col-unit::before {
-      content: "Од.:";
-      color: #94a3b8;
-    }
-
-    .col-price::before {
-      content: "Ціна:";
-      color: #94a3b8;
-    }
-
-    .col-materials::before {
-      content: "Матеріали:";
-      color: #94a3b8;
-    }
-
-    .col-complexity::before {
-      content: "Складність:";
-      color: #94a3b8;
-    }
-
-    .col-guarantee::before {
-      content: "Гарантія:";
-      color: #94a3b8;
-    }
-
-    .col-actions::before {
-      content: "Дії:";
-      color: #94a3b8;
-    }
-
-    .info-grid {
+    .pl-info-grid {
       grid-template-columns: 1fr;
     }
 
-    .modal-footer {
+    .pl-modal-footer {
       flex-direction: column;
     }
   }
@@ -686,21 +612,15 @@
       text-align: center;
     }
 
-    .section-header-left {
+    .pl-section-header-left {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
     }
 
-    .section-header-right {
+    .pl-section-header-right {
       flex-direction: column;
       gap: 0.5rem;
-    }
-
-    .section-footer {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
     }
   }
 }

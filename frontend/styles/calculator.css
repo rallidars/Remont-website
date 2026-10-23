@@ -1068,3 +1068,264 @@
     box-shadow: 0 0 0 10px rgba(159, 122, 234, 0);
   }
 }
+.area-input-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.area-box-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 380px;
+
+    padding: 20px 70px 20px 0;
+
+    margin: 0 auto;
+
+    touch-action: none;
+    user-select: none;
+}
+
+.area-box {
+    position: relative;
+
+    width: 600px;
+    height: 320px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    cursor: ns-resize;
+
+    touch-action: none;
+    user-select: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.area-box:hover {
+    border-color: rgba(56, 178, 172, 0.5);
+}
+
+.area-box:active {
+    border-color: #38b2ac;
+
+    box-shadow:
+        0 0 0 4px rgba(56, 178, 172, 0.15),
+        0 0 30px rgba(56, 178, 172, 0.25);
+}
+
+/* =========================================
+   AREA FILL
+========================================= */
+
+.area-box .area-fill {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    background: linear-gradient(
+        to top,
+        #2c5282 0%,
+        #4299e1 55%,
+        #38b2ac 100%
+    );
+
+    border-radius: 0 0 18px 18px;
+
+    transition: height 0.05s linear;
+
+    pointer-events: none;
+}
+
+.area-box .area-fill::after {
+    content: '';
+
+    position: absolute;
+
+    top: -2px;
+    left: 10%;
+
+    width: 80%;
+    height: 4px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: 2px;
+
+    filter: blur(1px);
+}
+
+/* =========================================
+   VALUE
+========================================= */
+
+.area-value-display {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(10px);
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    white-space: nowrap;
+}
+
+.area-number {
+    display: block;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #fff;
+
+    line-height: 1.2;
+}
+
+.area-unit {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================
+   VERTICAL LABELS
+========================================= */
+
+.area-labels-vertical {
+    position: absolute;
+
+    right: 0;
+
+    top: 20px;
+    bottom: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    pointer-events: none;
+}
+
+/* =========================================
+   DRAG HANDLE
+========================================= */
+
+.drag-handle {
+    position: absolute;
+
+    left: 50%;
+    bottom: 10px;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    pointer-events: none;
+
+    animation: bounce-handle 2s ease-in-out infinite;
+}
+
+@keyframes bounce-handle {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-6px);
+    }
+}
+
+/* =========================================
+   HINT
+========================================= */
+
+.area-hint {
+    margin-top: 10px;
+
+    text-align: center;
+
+    font-size: 0.9rem;
+
+    color: rgba(200, 220, 255, 0.55);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .area-box-container {
+        height: 340px;
+
+        padding-right: 10px;
+    }
+
+    .area-box {
+        max-width: 300px;
+        height: 280px;
+    }
+
+    .area-number {
+        font-size: 26px;
+    }
+
+    .area-unit {
+        font-size: 12px;
+    }
+
+    .area-labels-vertical {
+        right: 0;
+
+        font-size: 10px;
+    }
+
+    .area-hint {
+        font-size: 0.8rem;
+    }
+}

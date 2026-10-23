@@ -14,17 +14,16 @@ use crate::how_we_work::HowWeWork;
 use crate::navbar::{Navbar, NavbarState};
 use crate::preloading::Preloading;
 use crate::price_catalog::PriceCatalog;
-use yew::prelude::*;
 use web_sys::window;
-use yew_hooks::{UseAsyncOptions, use_async, use_async_with_options};
+use yew::prelude::*;
+use yew_hooks::{use_async, use_async_with_options, UseAsyncOptions};
 
 pub const BACKEND_URL: &'static str = "http://127.0.0.1:3000/api";
 
 #[component]
 fn App() -> Html {
     let current_page = use_state(|| NavbarState::Home);
-    let should_scroll=use_state(|| true);
-
+    let should_scroll = use_state(|| true);
 
     let on_navigate = {
         let current_page = current_page.clone();
