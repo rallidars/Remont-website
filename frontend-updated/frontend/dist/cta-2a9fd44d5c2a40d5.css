@@ -1,0 +1,829 @@
+/* .cta-main.css - оновлена версія з покращеною адаптивністю */
+.cta-main {
+    .cta-section {
+        position: relative;
+        min-height: 100vh;
+        padding: 6rem 2rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0f1e32 100%);
+    }
+
+    .cta-container {
+        position: relative;
+        z-index: 2;
+        max-width: 1400px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .cta-content {
+        padding-right: 2rem;
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(66, 153, 225, 0.1);
+        border: 1px solid rgba(66, 153, 225, 0.3);
+        border-radius: 100px;
+        font-size: 0.875rem;
+        color: #90cdf4;
+        margin-bottom: 2rem;
+        animation: badge-pulse 2s ease-in-out infinite;
+    }
+
+    .badge-dot {
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(45deg, #4299e1, #90cdf4);
+        border-radius: 50%;
+        animation: dot-pulse 1.5s ease-in-out infinite;
+    }
+
+    .cta-headline {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .headline-line {
+        display: block;
+        overflow: hidden;
+    }
+
+    .headline-line-1 {
+        color: rgba(200, 220, 255, 0.95);
+        animation: slide-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .headline-line-2 {
+        animation: slide-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        animation-delay: 0.4s;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .text-highlight {
+        background: linear-gradient(90deg, #2c5282 0%, #4299e1 50%, #2c5282 100%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        animation: gradient-shift 3s ease infinite;
+    }
+
+    .highlight-underline {
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #4299e1, transparent);
+        transform: scaleX(0);
+        transform-origin: center;
+        animation: underline-grow 2s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .cta-description {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: rgba(200, 220, 255, 0.8);
+        margin-bottom: 3rem;
+        opacity: 0;
+        animation: fade-in 1s ease forwards;
+        animation-delay: 0.6s;
+    }
+
+    .cta-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .cta-button {
+        position: relative;
+        padding: 1.5rem 3rem;
+        background: linear-gradient(135deg, rgba(44, 82, 130, 0.2), rgba(66, 153, 225, 0.1));
+        border: 2px solid rgba(66, 153, 225, 0.3);
+        border-radius: 16px;
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        overflow: hidden;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-5px);
+        border-color: rgba(66, 153, 225, 0.6);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(66, 153, 225, 0.2), 0 0 30px rgba(66, 153, 225, 0.4);
+    }
+
+    .cta-button:hover .button-arrow {
+        transform: translateX(5px);
+    }
+
+    .button-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    .button-arrow {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .button-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+        border-radius: 16px;
+        animation: ring-rotate 3s linear infinite;
+        z-index: 1;
+    }
+
+    .button-sparkle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, rgba(66, 153, 225, 0.1) 0%, transparent 70%);
+        animation: sparkle-pulse 2s ease-in-out infinite;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.875rem 1rem;
+        background: rgba(15, 30, 50, 0.4);
+        border: 1px solid rgba(66, 153, 225, 0.1);
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 0.9rem;
+        min-height: 64px;
+    }
+
+    .contact-item:hover {
+        background: rgba(66, 153, 225, 0.1);
+        border-color: rgba(66, 153, 225, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-item .contact-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(66, 153, 225, 0.1);
+        border-radius: 50%;
+        color: #4299e1;
+        position: relative;
+    }
+
+    .contact-item .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-item .contact-label {
+        font-size: 0.7rem;
+        color: rgba(200, 220, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        line-height: 1;
+    }
+
+    .contact-item .contact-value {
+        font-size: 0.85rem;
+        color: white;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .contact-details {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .contact-details .contact-label {
+        margin-bottom: 0.1rem;
+    }
+
+    /* Спеціальний стиль для телефону */
+    .contact-item.phone-item {
+        grid-column: 1 / -1;
+        background: linear-gradient(135deg, rgba(66, 153, 225, 0.15), rgba(44, 82, 130, 0.1));
+        border-color: rgba(66, 153, 225, 0.3);
+        padding: 1rem 1.25rem;
+        min-height: 72px;
+    }
+
+    .contact-item.phone-item:hover {
+        border-color: #4299e1;
+        box-shadow: 0 0 30px rgba(66, 153, 225, 0.2);
+    }
+
+    .contact-item.phone-item .contact-icon {
+        background: rgba(66, 153, 225, 0.2);
+        color: #63b3ed;
+    }
+
+    .phone-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .phone-ring-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 2px solid rgba(66, 153, 225, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: phone-ring 2s ease-in-out infinite;
+    }
+
+    /* Кольори для соцмереж при ховері */
+    .contact-item.instagram:hover .contact-icon {
+        color: #e4405f;
+    }
+    .contact-item.telegram:hover .contact-icon {
+        color: #0088cc;
+    }
+    .contact-item.viber:hover .contact-icon {
+        color: #7360f2;
+    }
+    .contact-item.tiktok:hover .contact-icon {
+        color: #ff0050;
+    }
+    .contact-item.youtube:hover .contact-icon {
+        color: #ff0000;
+    }
+    .contact-item.facebook:hover .contact-icon {
+        color: #1877f2;
+    }
+
+    /* Contact form overlay */
+    .contact-form-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 30, 50, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        animation: overlay-appear 0.3s ease;
+    }
+
+    .contact-form-container {
+        position: relative;
+        max-width: 500px;
+        width: 90%;
+        background: rgba(22, 45, 80, 0.9);
+        border-radius: 24px;
+        padding: 3rem;
+        border: 1px solid rgba(66, 153, 225, 0.3);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(66, 153, 225, 0.2);
+        animation: form-slide-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .form-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+        background: rgba(66, 153, 225, 0.1);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .form-close:hover {
+        background: rgba(66, 153, 225, 0.2);
+        transform: rotate(90deg);
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .form-header h3 {
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+        color: rgba(200, 220, 255, 0.8);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        position: relative;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 1rem 0;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(66, 153, 225, 0.2);
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+        outline: none;
+        border-bottom-color: #4299e1;
+    }
+
+    .form-label {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: rgba(200, 220, 255, 0.6);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .form-input:focus+.form-label,
+    .form-input:not(:placeholder-shown)+.form-label,
+    .form-textarea:focus+.form-label,
+    .form-textarea:not(:placeholder-shown)+.form-label {
+        top: -0.5rem;
+        font-size: 0.875rem;
+        color: #4299e1;
+    }
+
+    .form-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4299e1, #90cdf4);
+        transition: width 0.3s ease;
+    }
+
+    .form-input:focus~.form-line,
+    .form-textarea:focus~.form-line {
+        width: 100%;
+    }
+
+    .form-textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .submit-button {
+        position: relative;
+        padding: 1rem 2rem;
+        background: linear-gradient(90deg, #2c5282, #4299e1);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(66, 153, 225, 0.3);
+    }
+
+    .submit-text {
+        position: relative;
+        z-index: 1;
+    }
+
+    .submit-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, #4299e1, #63b3ed);
+        transition: width 0.3s ease;
+    }
+
+    .submit-button:hover .submit-progress {
+        width: 100%;
+    }
+
+    /* ===== АДАПТИВНІСТЬ ===== */
+    
+    /* Планшети та маленькі ноутбуки */
+    @media (max-width: 1024px) {
+        .cta-container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .cta-content {
+            padding-right: 0;
+            text-align: center;
+        }
+
+        .cta-headline {
+            font-size: 3rem;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.65rem;
+        }
+
+        .contact-item {
+            padding: 0.75rem 0.85rem;
+            min-height: 60px;
+        }
+
+        .contact-item .contact-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+        }
+
+        .contact-item .contact-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .contact-item.phone-item {
+            min-height: 68px;
+            padding: 0.9rem 1.1rem;
+        }
+    }
+
+    /* Мобільні телефони (великі) */
+    @media (max-width: 768px) {
+        .cta-section {
+            padding: 3rem 1.25rem;
+        }
+
+        .cta-headline {
+            font-size: 2.5rem;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-actions {
+            gap: 1.5rem;
+        }
+
+        .cta-button {
+            padding: 1.25rem 2rem;
+            font-size: 1.125rem;
+            border-radius: 14px;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+        }
+
+        .contact-item {
+            padding: 0.7rem 0.8rem;
+            min-height: 56px;
+            border-radius: 10px;
+            gap: 0.6rem;
+        }
+
+        .contact-item .contact-icon {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+        }
+
+        .contact-item .contact-icon svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .contact-item .contact-value {
+            font-size: 0.8rem;
+        }
+
+        .contact-item .contact-label {
+            font-size: 0.65rem;
+        }
+
+        .contact-item.phone-item {
+            grid-column: 1 / -1;
+            min-height: 62px;
+            padding: 0.8rem 1rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .contact-form-container {
+            padding: 2rem 1.5rem;
+            width: 92%;
+        }
+
+        .form-header h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Маленькі телефони */
+    @media (max-width: 480px) {
+        .cta-section {
+            padding: 2rem 1rem;
+        }
+
+        .cta-headline {
+            font-size: 2rem;
+        }
+
+        .cta-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 12px;
+            gap: 0.75rem;
+        }
+
+        .cta-button .button-arrow svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem;
+        }
+
+        .contact-item {
+            padding: 0.55rem 0.6rem;
+            min-height: 48px;
+            border-radius: 8px;
+            gap: 0.5rem;
+        }
+
+        .contact-item .contact-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+        }
+
+        .contact-item .contact-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .contact-item .contact-value {
+            font-size: 0.7rem;
+        }
+
+        .contact-item .contact-label {
+            font-size: 0.55rem;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-item.phone-item {
+            grid-column: 1 / -1;
+            min-height: 54px;
+            padding: 0.65rem 0.8rem;
+        }
+
+        .contact-item.phone-item .contact-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+        }
+
+        .contact-item.phone-item .contact-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            padding: 0.4rem 0.75rem;
+            gap: 0.5rem;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+        }
+
+        .contact-form-container {
+            padding: 1.5rem 1.25rem;
+            width: 95%;
+            border-radius: 16px;
+        }
+
+        .form-header h3 {
+            font-size: 1.25rem;
+        }
+
+        .form-header p {
+            font-size: 0.875rem;
+        }
+
+        .form-close {
+            width: 32px;
+            height: 32px;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .form-close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .submit-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Дуже маленькі телефони */
+    @media (max-width: 380px) {
+        .cta-headline {
+            font-size: 1.6rem;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem;
+        }
+
+        .contact-item {
+            padding: 0.4rem 0.5rem;
+            min-height: 42px;
+            border-radius: 6px;
+            gap: 0.4rem;
+        }
+
+        .contact-item .contact-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+        }
+
+        .contact-item .contact-icon svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .contact-item .contact-value {
+            font-size: 0.6rem;
+        }
+
+        .contact-item .contact-label {
+            font-size: 0.5rem;
+        }
+
+        .contact-item.phone-item {
+            min-height: 46px;
+            padding: 0.5rem 0.6rem;
+        }
+
+        .contact-item.phone-item .contact-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+        }
+
+        .contact-item.phone-item .contact-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+/* Keyframes - без змін */
+@keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(66, 153, 225, 0); }
+}
+
+@keyframes dot-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.7; }
+}
+
+@keyframes slide-up {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes underline-grow {
+    to { transform: scaleX(1); }
+}
+
+@keyframes fade-in {
+    to { opacity: 1; }
+}
+
+@keyframes ring-rotate {
+    0% { transform: rotate(0deg); border-color: rgba(66, 153, 225, 0) rgba(66, 153, 225, 0) rgba(66, 153, 225, 0) rgba(66, 153, 225, 1); }
+    25% { border-color: rgba(66, 153, 225, 0) rgba(66, 153, 225, 0) rgba(66, 153, 225, 1) rgba(66, 153, 225, 0); }
+    50% { border-color: rgba(66, 153, 225, 0) rgba(66, 153, 225, 1) rgba(66, 153, 225, 0) rgba(66, 153, 225, 0); }
+    75% { border-color: rgba(66, 153, 225, 1) rgba(66, 153, 225, 0) rgba(66, 153, 225, 0) rgba(66, 153, 225, 0); }
+    100% { transform: rotate(360deg); border-color: rgba(66, 153, 225, 0) rgba(66, 153, 225, 0) rgba(66, 153, 225, 0) rgba(66, 153, 225, 1); }
+}
+
+@keyframes sparkle-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes phone-ring {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    50% { opacity: 0.5; }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+}
+
+@keyframes overlay-appear {
+    from { opacity: 0; backdrop-filter: blur(0); }
+    to { opacity: 1; backdrop-filter: blur(10px); }
+}
+
+@keyframes form-slide-up {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}

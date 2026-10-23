@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+          />
+              <title>Gradprus</title>
+          <link rel="modulepreload" href="/frontend-be82be5ff74332b.js" crossorigin="anonymous" integrity="sha384-4SKVmrb4NBSghKDk/hxovfK4BFPPMXd27R3w60/XxtyUqVIxQfokrTgfc09j6Wjl"><link rel="preload" href="/frontend-be82be5ff74332b_bg.wasm" crossorigin="anonymous" integrity="sha384-CsHVYEgTR44ikM772fXeXdQl6FkHS7yOb4xQZa/eF0anDn2/EazaxUqMizv4MNkI" as="fetch" type="application/wasm"></head>
+
+ <link rel="icon" href="/favicon2-15b181956376125f.ico" integrity="sha384-mw5eMKKuV09kHW8SF29hMcIMASHjzW/Z7AdOp9RG44txNvbA46JwqJ1+NR/fQNG1"/>
+    <link rel="stylesheet" href="/gallery-2ed39db34d0ab76f.css" integrity="sha384-S6ShWOENXDP0IFtnQSxa5rXdm23yLvHspKqzfsk8GkjBjRg3OmWRSVPgAigF0zp+"/>
+    <link rel="stylesheet" href="/preloading-6c4a1fb533815ab5.css" integrity="sha384-3uai4tzrOnAoFlWsUSu8gAiFu0Jcv9l+XQHwcbK3em5NwCP0ry0TxQafhZJONrsY"/>
+    <link rel="stylesheet" href="/calculator-61699a53e8067d51.css" integrity="sha384-uAAXU1A3ghuB2vrZIjCxzmSet9fL/uZOQajNsF3fSvxOMsUDi0wn6uIc6wvxjLCc"/>
+    <link rel="stylesheet" href="/background-9ea988b17f12a586.css" integrity="sha384-pTrCGcy7umDEtKmn56sSay3vuKoPII6blSmWHQ8wdFfLylEA2miLOEYv37PwULvK"/>
+    <link rel="stylesheet" href="/cta-2a9fd44d5c2a40d5.css" integrity="sha384-X3nFv6mzEtHrlHddVlW9fBvli1BPIdSqjxg4K/67950xONWy99d/IqP7XMOXQVaR"/>
+    <link rel="stylesheet" href="/ending-c5690205308a0d1d.css" integrity="sha384-gqIrJYM/YM4VLlJcQ9gbxV1ZhZx7vIFqiEhdQDSRgILx8+mVjoT/M90ar9DB80fv"/>
+    <link rel="stylesheet" href="/navabar-18ebf87f9c481300.css" integrity="sha384-fENPEFB0mHAUwXuwAvR316m2HhcB1cqRFeU0iC9ImaBDTRZ23Z85XqwRRfZRm45N"/>
+    <link rel="stylesheet" href="/how_we_work-6fbd6010e0b4c3a4.css" integrity="sha384-IaXrbhm8YK9FqvcFLcqs8+QTjB38JTg9nwODIBanhEy8BXGaHePcTmte6j6/MgJ6"/>
+    
+    <body>
+<script type="module">
+import init, * as bindings from '/frontend-be82be5ff74332b.js';
+const wasm = await init({ module_or_path: '/frontend-be82be5ff74332b_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>

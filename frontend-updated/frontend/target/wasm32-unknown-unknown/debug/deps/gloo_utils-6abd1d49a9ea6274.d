@@ -1,0 +1,10 @@
+C:\Users\master\projects\Remont-website\frontend-updated\frontend\target\wasm32-unknown-unknown\debug\deps\gloo_utils-6abd1d49a9ea6274.d: C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\lib.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\errors.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\iter.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\format\json.rs
+
+C:\Users\master\projects\Remont-website\frontend-updated\frontend\target\wasm32-unknown-unknown\debug\deps\libgloo_utils-6abd1d49a9ea6274.rlib: C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\lib.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\errors.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\iter.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\format\json.rs
+
+C:\Users\master\projects\Remont-website\frontend-updated\frontend\target\wasm32-unknown-unknown\debug\deps\libgloo_utils-6abd1d49a9ea6274.rmeta: C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\lib.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\errors.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\iter.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\format\json.rs
+
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\lib.rs:
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\errors.rs:
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\iter.rs:
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-utils-0.1.7\src\format\json.rs:

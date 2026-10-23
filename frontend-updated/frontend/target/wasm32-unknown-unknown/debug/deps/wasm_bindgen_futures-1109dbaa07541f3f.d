@@ -1,0 +1,9 @@
+C:\Users\master\projects\Remont-website\frontend-updated\frontend\target\wasm32-unknown-unknown\debug\deps\wasm_bindgen_futures-1109dbaa07541f3f.d: C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\lib.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\queue.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\task\singlethread.rs
+
+C:\Users\master\projects\Remont-website\frontend-updated\frontend\target\wasm32-unknown-unknown\debug\deps\libwasm_bindgen_futures-1109dbaa07541f3f.rlib: C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\lib.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\queue.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\task\singlethread.rs
+
+C:\Users\master\projects\Remont-website\frontend-updated\frontend\target\wasm32-unknown-unknown\debug\deps\libwasm_bindgen_futures-1109dbaa07541f3f.rmeta: C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\lib.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\queue.rs C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\task\singlethread.rs
+
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\lib.rs:
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\queue.rs:
+C:\Users\master\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\wasm-bindgen-futures-0.4.58\src\task\singlethread.rs:

@@ -1211,16 +1211,20 @@ pub fn Calculator() -> Html {
                                             </div>
 
                                             <h3 class="result-title">
-                                                {"Розрахунок готовий!"}
+                                                {"Ваш попередній розрахунок готовий!"}
                                             </h3>
 
                                             <p class="result-subtitle">
-                                                {"Орієнтовна вартість вашого ремонту"}
+                                                {"Залишився один крок до точного кошторису"}
                                             </p>
 
                                         </div>
 
                                         <div class="result-price">
+
+                                            <div class="result-price-label">
+                                                {"ОРІЄНТОВНА ВАРТІСТЬ РЕМОНТУ"}
+                                            </div>
 
                                             <div class="price-amount">
 
@@ -1241,6 +1245,50 @@ pub fn Calculator() -> Html {
                                                         .price_per_sqm
                                                 )}
 
+                                            </div>
+
+                                            <p class="result-price-note">
+                                                {"Попередня оцінка. Фінальна вартість залежить від обсягу робіт і матеріалів."}
+                                            </p>
+
+                                        </div>
+
+                                        <div class="result-contact-cta">
+
+                                            <h4>{"Хочете знати точну вартість?"}</h4>
+
+                                            <p>
+                                                {"Уточнимо деталі вашого ремонту та підготуємо кошторис."}
+                                            </p>
+
+                                            <a class="result-main-cta" href="#contact">
+                                                {"Отримати точний розрахунок за 15 хвилин"}
+                                                <span>{" →"}</span>
+                                            </a>
+
+                                            <div class="result-contact-caption">
+                                                {"Або зв’яжіться з нами напряму"}
+                                            </div>
+
+                                            <div class="result-contact-links">
+                                                <a class="result-contact-link result-contact-phone" href="tel:+380XXXXXXXXX">
+                                                    <span>{"☎"}</span>
+                                                    {"Телефон"}
+                                                </a>
+
+                                                <a class="result-contact-link result-contact-telegram" href="https://t.me/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
+                                                    <span>{"➤"}</span>
+                                                    {"Telegram"}
+                                                </a>
+
+                                                <a class="result-contact-link result-contact-viber" href="viber://chat?number=%2B380XXXXXXXXX">
+                                                    <span>{"✆"}</span>
+                                                    {"Viber"}
+                                                </a>
+                                            </div>
+
+                                            <div class="result-response-note">
+                                                {"Швидко відповімо на ваш запит"}
                                             </div>
 
                                         </div>

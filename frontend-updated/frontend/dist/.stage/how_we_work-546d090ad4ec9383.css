@@ -1,0 +1,679 @@
+.ap-how-we-work-main {
+  .ap-processes-section {
+    position: relative;
+    padding: 6rem 1.5rem;
+    overflow: hidden;
+    min-height: 100vh;
+    color: white;
+    background: linear-gradient(180deg, #0a0f1a 0%, #141b2b 100%);
+  }
+
+  .ap-processes-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // ==========================================
+  // Header
+  // ==========================================
+  .ap-processes-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .ap-processes-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .ap-title-glow {
+    background: linear-gradient(90deg,
+        #2c5282 0%,
+        #4299e1 25%,
+        #63b3ed 50%,
+        #4299e1 75%,
+        #2c5282 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: ap-gradientFlow 4s ease infinite;
+    text-shadow: 0 0 40px rgba(66, 153, 225, 0.3);
+    position: relative;
+  }
+
+  .ap-title-glow::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #4299e1, transparent);
+    border-radius: 2px;
+  }
+
+  .ap-processes-subtitle {
+    font-size: 1.3rem;
+    color: rgba(200, 220, 255, 0.8);
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+    line-height: 1.6;
+  }
+
+  // ==========================================
+  // Centered Timeline
+  // ==========================================
+  .ap-process-timeline {
+    margin-bottom: 5rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  .ap-timeline-track {
+    position: relative;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    margin: 100px 100px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .ap-timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg,
+        #2c5282,
+        #4299e1,
+        #63b3ed);
+    border-radius: 3px;
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.4);
+  }
+
+  .ap-timeline-step {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ap-timeline-step:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  .ap-timeline-step.active {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .ap-step-marker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ap-marker-outer {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .ap-timeline-step:hover .ap-marker-outer {
+    transform: scale(1.05);
+    border-color: rgba(66, 153, 225, 0.3);
+  }
+
+  .ap-timeline-step.active .ap-marker-outer {
+    background: rgba(66, 153, 225, 0.15);
+    border-color: #4299e1;
+    box-shadow:
+      0 0 0 6px rgba(66, 153, 225, 0.15),
+      0 0 30px rgba(66, 153, 225, 0.3);
+  }
+
+  .ap-timeline-step.passed .ap-marker-outer {
+    border-color: rgba(66, 153, 225, 0.3);
+    background: rgba(66, 153, 225, 0.08);
+  }
+
+  .ap-marker-inner {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-weight: 700;
+    color: white;
+    font-size: 0.9rem;
+    position: relative;
+  }
+
+  .ap-timeline-step.active .ap-marker-inner {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .ap-step-number {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .ap-timeline-step.active .ap-step-number {
+    font-size: 0;
+  }
+
+  .ap-timeline-step.active .ap-marker-inner::after {
+    content: '✓';
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .ap-step-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(200, 220, 255, 0.6);
+    text-align: center;
+    transition: all 0.3s ease;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
+  }
+
+  .ap-timeline-step:hover .ap-step-label {
+    color: rgba(200, 220, 255, 0.9);
+  }
+
+  .ap-timeline-step.active .ap-step-label {
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .ap-timeline-step.passed .ap-step-label {
+    color: rgba(66, 153, 225, 0.7);
+  }
+
+  // Tooltip
+  .ap-step-tooltip {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .ap-step-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(15, 23, 42, 0.95);
+  }
+
+  .ap-timeline-step:hover .ap-step-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+  }
+
+  .ap-tooltip-title {
+    font-weight: 700;
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  .ap-tooltip-duration {
+    font-size: 0.75rem;
+    color: rgba(200, 220, 255, 0.6);
+    font-weight: 500;
+  }
+
+  // ==========================================
+  // Process Content
+  // ==========================================
+  .ap-process-content {
+    margin-bottom: 4rem;
+    min-height: 400px;
+  }
+
+  .ap-process-content.animation-enter {
+    animation: ap-fadeInUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .ap-process-content.animation-exit {
+    animation: ap-fadeOutDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes ap-fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes ap-fadeOutDown {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+    }
+  }
+
+  .ap-process-details {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .ap-process-details:hover {
+    border-color: rgba(66, 153, 225, 0.2);
+  }
+
+  .ap-process-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .ap-process-title-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .ap-process-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .ap-process-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  .ap-process-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .ap-process-description {
+    font-size: 1.05rem;
+    color: rgba(200, 220, 255, 0.8);
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .ap-process-stats {
+    display: flex;
+    gap: 2rem;
+    flex-shrink: 0;
+  }
+
+  .ap-stat-item {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    min-width: 80px;
+  }
+
+  .ap-stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.15rem;
+    background: linear-gradient(135deg, #fff, #63b3ed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .ap-stat-label {
+    font-size: 0.75rem;
+    color: rgba(200, 220, 255, 0.6);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ap-process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ap-process-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .ap-process-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(6px);
+  }
+
+  .ap-process-item-marker {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+  }
+
+  .ap-item-number {
+    font-weight: 700;
+  }
+
+  .ap-process-item-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ap-item-text {
+    color: rgba(200, 220, 255, 0.95);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .ap-item-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #48bb78;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(72, 187, 120, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .ap-item-status svg {
+    animation: ap-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes ap-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  // ==========================================
+  // Responsive
+  // ==========================================
+  @media (max-width: 1024px) {
+    .ap-processes-title {
+      font-size: 2.6rem;
+    }
+
+    .ap-timeline-track {
+      margin: 100px 30px;
+    }
+
+    .ap-step-label {
+      font-size: 0.65rem;
+      max-width: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ap-processes-section {
+      padding: 4rem 1rem;
+    }
+
+    .ap-processes-title {
+      font-size: 2rem;
+    }
+
+    .ap-processes-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .ap-timeline-track {
+      margin: 50px 20px;
+    }
+
+    .ap-marker-outer {
+      width: 44px;
+      height: 44px;
+    }
+
+    .ap-marker-inner {
+      width: 34px;
+      height: 34px;
+    }
+
+    .ap-step-number {
+      font-size: 0.7rem;
+    }
+
+    .ap-step-label {
+      font-size: 0.55rem;
+      max-width: 50px;
+    }
+
+    .ap-step-tooltip {
+      display: none;
+    }
+
+    .ap-process-details {
+      padding: 1.5rem;
+    }
+
+    .ap-process-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .ap-process-title-wrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .ap-process-title {
+      font-size: 1.5rem;
+    }
+
+    .ap-process-description {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+
+    .ap-process-stats {
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .ap-stat-item {
+      padding: 0.4rem 0.8rem;
+      min-width: 60px;
+    }
+
+    .ap-stat-value {
+      font-size: 1.3rem;
+    }
+
+    .ap-process-item {
+      padding: 0.75rem 1rem;
+    }
+
+    .ap-process-item-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .ap-item-text {
+      font-size: 0.9rem;
+    }
+
+    .ap-item-status {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ap-processes-title {
+      font-size: 1.6rem;
+    }
+
+    .ap-processes-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .ap-timeline-track {
+      margin: 10 10px;
+      height: 4px;
+    }
+
+    .ap-marker-outer {
+      width: 36px;
+      height: 36px;
+    }
+
+    .ap-marker-inner {
+      width: 28px;
+      height: 28px;
+    }
+
+    .ap-step-number {
+      font-size: 0.6rem;
+    }
+
+    .ap-step-label {
+      font-size: 0.5rem;
+      max-width: 40px;
+    }
+
+    .ap-process-details {
+      padding: 1rem;
+      border-radius: 16px;
+    }
+
+    .ap-process-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .ap-process-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .ap-process-title {
+      font-size: 1.2rem;
+    }
+
+    .ap-process-description {
+      font-size: 0.85rem;
+    }
+
+    .ap-process-item {
+      padding: 0.6rem 0.75rem;
+      border-radius: 12px;
+    }
+
+    .ap-process-item-marker {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+    }
+
+    .ap-item-text {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// ============================================
+// Global Animations
+// ============================================
+@keyframes ap-gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
